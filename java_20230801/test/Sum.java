@@ -1,8 +1,6 @@
-package practice;
+package test;
 
-
-
-public final class Plus implements BinaryOperation {
+public class Sum implements BinaryOperation {
 
     @Override
     public double apply(double x, double y) {

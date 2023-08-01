@@ -1,4 +1,4 @@
-package practice;
+package test2;
 
 public class Mathx {
     public static double reduce(BinaryOperation binaryOperation, double init, double... numbers) {
@@ -6,22 +6,23 @@ public class Mathx {
     }
 
     public static double sum(double... numbers) {
-        return Mathx.reduce(new Plus(), 0, numbers);
+        return reduce(new Sum(), 0, numbers);
     }
 
     public static double multiply(double... numbers) {
-        return Mathx.reduce(new Multiply(), 1, numbers);
+        return reduce(new Multiply(), 1, numbers);
     }
 
-    public static double reduceIf(Predicate predicate, BinaryOperation binaryOperation, double init,
-            double... numbers) {
+    public static double reduceIf(IsEven isEven, BinaryOperation binaryOperation, double init,
+            double[] numbers) {
         double result = init;
 
         for (double number : numbers) {
-            if (predicate.apply(number)) {
+            if (isEven.apply(number)) {
                 result = binaryOperation.apply(result, number);
             }
         }
         return result;
     }
+
 }
