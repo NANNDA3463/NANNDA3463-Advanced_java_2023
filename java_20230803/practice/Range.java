@@ -9,7 +9,10 @@ public final class Range {
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         classInvariant();
+    }
 
+    public Range(int upperBound) {
+        this(0, upperBound);
     }
 
     private void classInvariant() {

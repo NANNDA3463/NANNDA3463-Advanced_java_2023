@@ -2,20 +2,27 @@ package practice;
 
 public class MathxTest {
 
+
     public static void main(String[] args) {
+
+        double[] numbers = new double[args.length];
+
+        for (String number : args) {
+
+        }
+
+        System.out.println(Mathx.sum(numbers));
+        System.out.println(Mathx.sum(new Range(10)));
+        System.out.println(Mathx.sum(new Range(0, 10)));
+        System.out.println(Mathx.sum(new Range(5, 10)));
+
+        RangeTest.classInvariant();
         MathxTest.range();
     }
 
     public static void range() {
-        try {
-            Range range = range = new Range(-6, -4);;
-            System.out.println(range.getLowerBound());
-        } catch (IllegalArgumentException e) {
-            System.out.format("Range lower bound %d가 upper bound %d보다 크지 않습니다.%n",
-                    range.getLowerBound(), range.getUpperBound());
-        }
 
-        Range ten = new Range(1, 10);
+
 
     }
 
