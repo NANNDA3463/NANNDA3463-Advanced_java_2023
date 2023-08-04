@@ -5,13 +5,7 @@ public class Mathx {
         return reduceIf(x -> true, binaryOperation, init, numbers);
     }
 
-    public static double sum(double... numbers) {
-        return Mathx.reduce(new Plus(), 0, numbers);
-    }
 
-    public static double multiply(double... numbers) {
-        return Mathx.reduce(new Multiply(), 1, numbers);
-    }
 
     public static double reduceIf(Predicate predicate, BinaryOperation binaryOperation, double init,
             double... numbers) {
@@ -23,5 +17,13 @@ public class Mathx {
             }
         }
         return result;
+    }
+
+    public static double sum(double... numbers) {
+        return Mathx.reduce(new Plus(), 0, numbers);
+    }
+
+    public static double multiply(double... numbers) {
+        return Mathx.reduce(new Multiply(), 1, numbers);
     }
 }

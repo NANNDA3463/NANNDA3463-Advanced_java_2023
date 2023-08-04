@@ -24,13 +24,11 @@ public class FractionalTest {
 
     public static int numerator(int[] fractional) {
         nomalize(fractional);
-
         return fractional[0];
     }
 
     public static int denomiator(int[] fractional) {
         nomalize(fractional);
-
         return fractional[1];
     }
 
@@ -56,6 +54,8 @@ public class FractionalTest {
             System.out.println(toString(r));
 
         }
+
+        System.out.println(equals(rs[0], rs[1]));
 
 
     }

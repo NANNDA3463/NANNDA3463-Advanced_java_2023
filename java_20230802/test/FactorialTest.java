@@ -18,7 +18,7 @@ public class FactorialTest {
         int[][] numbers = {{1, 1}, {5, 120}, {9, 362880}};
 
         for (int[] number : numbers) {
-            assert TestMathX.fibonacci(number[0]) != number[1];
+            assert TestMathX.fibonacci(number[0]) == number[1];
         }
     }
 
