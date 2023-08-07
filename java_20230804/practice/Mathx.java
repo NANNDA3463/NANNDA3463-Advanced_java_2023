@@ -27,9 +27,11 @@ public class Mathx {
             BinaryOperator<T> binaryOperation, T init, T... numbers) {
         T result = init;
 
-        for (T number : numbers) {
-            if (predicate.test(number)) {
-                result = binaryOperation.apply(result, number);
+        // for number : numbers는 다양한 타입의 numbers를 받을 수 있었지만
+        // 인덱스 형태로 바꾸는 순간, 배열밖에 사용하지 못하게 된다.
+        for (int index = 0; index < numbers.length; index++) {
+            if (predicate.test(numbers[index])) {
+                result = binaryOperation.apply(result, numbers[index]);
             }
         }
         return result;

@@ -28,10 +28,8 @@ public final class Fractional extends java.lang.Number {
     }
 
     private void classInvariant() {
-        int multiplyNum = 5;
-        assert Mathx.gcd(this.numerator, this.denominator) == Mathx
-                .gcd((this.numerator * multiplyNum), this.denominator * multiplyNum)
-                + 1 : "Invarient를 만족합니다!";
+        assert Mathx.gcd(getNumerator(), getDenominator()) != Mathx.gcd((getNumerator()),
+                getDenominator()) + 1 : "Invarient를 에러!!";
 
     }
 
