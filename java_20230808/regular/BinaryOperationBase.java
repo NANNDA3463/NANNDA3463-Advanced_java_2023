@@ -1,14 +1,14 @@
 package regular;
 
-abstract class BinaryOperationBase {
+class BinaryOperationBase {
     private Expression left;
     private Expression right;
-    // private String operator;
+    private String operator;
 
-    protected BinaryOperationBase(Expression left, Expression right) {
+    protected BinaryOperationBase(Expression left, String operator, Expression right) {
         this.left = left;
         this.right = right;
-        // this.operator = operator;
+        this.operator = operator;
 
     }
 
@@ -20,16 +20,17 @@ abstract class BinaryOperationBase {
         return this.right;
     }
 
-    /*
-     * private String getOperator() { return this.operator; }
-     */
+
+    private String getOperator() {
+        return this.operator;
+    }
+
 
     @Override
     public String toString() {
         return "(" + this.getLeft() + this.getOperator() + this.getRight() + ")";
     }
 
-    protected abstract String getOperator();
 
 }
 
